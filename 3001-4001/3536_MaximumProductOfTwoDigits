@@ -1,0 +1,21 @@
+class Solution {
+    public int maxProduct(int n) {
+        int maxNum = n % 10;
+        n = n / 10;
+
+        int maxProduct = 0;
+
+        while(n != 0) {
+            int digit = n % 10;
+            n = n / 10;
+
+            maxProduct = Math.max(maxProduct, maxNum * digit);
+
+            if(maxNum < digit){
+                maxNum = digit;
+            }
+        }
+
+        return maxProduct;
+    }
+}
